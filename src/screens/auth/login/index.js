@@ -8,17 +8,38 @@ import { GRAY_COLOR, PRIMARY_COLOR } from '../../../utils/colors'
 import { Font_Heebo_Medium, Font_Heebo_Regular, Font_Heebo_SemiBold, Font_Lato_Bold } from '../../../utils/typograpy'
 import Button from '../../../components/button/Button'
 import Icon from '../../../utils/icons'
+import { connect } from 'react-redux'
+import { postWithBody } from '../../../utils/appUtil/ApiHelper'
+import jwt_decode from "jwt-decode";
 
-
-export default class Login extends Component {
-    constructor() {
-        super();
+class Login extends Component {
+    constructor(props) {
+        super(props);
         this.state = {
-            isPasswordView: false
+            isPasswordView: false,
+            email:'',
+            password:''
         }
     }
     handlePasswordState = () => {
         this.setState({ isPasswordView: !this.state.isPasswordView })
+    }
+    login(){
+        let {email,password}=this.state
+        if(!email && !password){return}
+        let body={email,password}
+        postWithBody('driver/login',JSON.stringify(body))
+        .then(res=>{
+            if(!res.err){
+                var decoded = jwt_decode(res.token);
+                this.props.login({_id:decoded._id,email})
+            }else{
+                alert(res.msg)
+            }
+        }).catch(error=>{console.log(error);})
+    }
+    onChangeText(val, key) {
+        this.setState({ [key]: val })
     }
     render() {
         const { isPasswordView } = this.state
@@ -38,10 +59,12 @@ export default class Login extends Component {
                     </View>
                     <View style={styles.formContainer}>
                         <View style={styles.textInputContainer}>
-                            <TextInput placeholder='Enter email address' style={styles.textInput} />
+                            <TextInput placeholder='Enter email address' style={styles.textInput} keyboardType={'email-address' }
+                            onChangeText={(val) => this.onChangeText(val, 'email')} />
                         </View>
                         <View style={[styles.textInputContainer, { marginBottom: 8 }]}>
-                            <TextInput placeholder='Enter password' secureTextEntry={!isPasswordView} style={styles.textInput} />
+                            <TextInput placeholder='Enter password' secureTextEntry={!isPasswordView} style={styles.textInput} 
+                            onChangeText={(val) => this.onChangeText(val, 'password')}/>
                             <Icon name={isPasswordView ? 'eye' : 'eye-off'} color='rgba(0,0,0,0.3)' size={25} onPress={this.handlePasswordState} />
                         </View>
                         <View style={{ marginBottom: 30 }}>
@@ -50,7 +73,7 @@ export default class Login extends Component {
                         <View>
                             <Button
                                 title='Login'
-                                onPress={() => this.props.navigation.navigate("home")}
+                                onPress={() => this.login()}
                             />
                         </View>
                     </View>
@@ -59,7 +82,17 @@ export default class Login extends Component {
         )
     }
 }
-
+const mapStateToProps = state => {
+    return {
+      state: state.AuthReducer,
+    };
+  };
+  const mapDispatchToProps = dispatch => {
+    return {
+        login: (data) => dispatch({ type: 'SIGNIN', payload: data }),
+    };
+  };
+  export default connect(mapStateToProps, mapDispatchToProps)(Login)
 const styles = StyleSheet.create({
     textHeading: {
         fontSize: 25,

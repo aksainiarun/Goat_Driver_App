@@ -8,6 +8,7 @@ import Header from '../../components/header/Header'
 import { TouchableRipple } from 'react-native-paper'
 import Icon from '../../utils/icons'
 import ConfirmModal from '../../components/modals/alerts/Confirm'
+import { connect } from 'react-redux'
 
 const ListItem = ({ iconName, iconColor, title, onPress }) => {
     return (<TouchableRipple onPress={onPress && onPress} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', borderBottomWidth: 1, borderBottomColor: "rgba(244,244,244,1)", paddingVertical: 22, paddingHorizontal: 18 }}>
@@ -18,9 +19,9 @@ const ListItem = ({ iconName, iconColor, title, onPress }) => {
     </TouchableRipple>)
 }
 
-export default class Profile extends Component {
-    constructor() {
-        super();
+class Profile extends Component {
+    constructor(props) {
+        super(props);
         this.state = {
             isLogout: false,
         }
@@ -30,7 +31,7 @@ export default class Profile extends Component {
     }
     handleLogout = () => {
         this.handleLogoutConfirm()
-        this.props.navigation.navigate("login")
+        this.props.logout()
     }
     render() {
         const { isLogout } = this.state
@@ -61,5 +62,15 @@ export default class Profile extends Component {
         )
     }
 }
-
+const mapStateToProps = state => {
+    return {
+      state: state.AuthReducer,
+    };
+  };
+  const mapDispatchToProps = dispatch => {
+    return {
+        logout: () => dispatch({ type: 'LOGOUT'}),
+    };
+  };
+  export default connect(mapStateToProps, mapDispatchToProps)(Profile)
 const styles = StyleSheet.create({})

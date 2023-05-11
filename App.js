@@ -1,7 +1,11 @@
-import { Text, StyleSheet, View, TextInput } from 'react-native'
+import { Text, TextInput } from 'react-native'
 import React, { Component } from 'react'
-import RootNavigation from './src/navigation/RootNavigation'
 import { NavigationContainer } from '@react-navigation/native'
+import RootNavigation from './src/navigation/RootNavigation'
+import { store, persistor } from './src/Reducer';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+
 export default class App extends Component {
   render() {
     if (Text.defaultProps == null) Text.defaultProps = {};
@@ -9,11 +13,15 @@ export default class App extends Component {
     if (TextInput.defaultProps == null) TextInput.defaultProps = {};
     TextInput.defaultProps.allowFontScaling = false;
     return (
-      <NavigationContainer>
-        <RootNavigation />
-      </NavigationContainer>
+      <Provider store={store}>
+        <PersistGate
+          //  loading={<Text>Loading...</Text>} 
+          persistor={persistor}>
+            <NavigationContainer>
+              <RootNavigation />
+            </NavigationContainer>
+        </PersistGate>
+      </Provider>
     )
   }
 }
-
-const styles = StyleSheet.create({})

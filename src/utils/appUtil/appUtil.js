@@ -33,20 +33,25 @@ export const isNullOrEmpty = s => {
     }
     return false;
   };
-
-  export const getFinalPrice = product => {
-    return product.price-product.price*product.userDiscount/100
-  };
-
-  export const getCount = (item, arr) => {
-    if (item == null || arr == null) {
-      return 0;
-    }
-    var count = 0;
-    var array = arr != '' ? arr.itemRequest : [];
-    if (array.filter(product => product.productId == item.productId).length > 0) {
-      return parseInt(array.filter(product => product.productId == item.productId)[0]?.quantity);
-    }
-    return count;
+  export const getFullDate = date => {
+    var months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    var formatted = new Date(date);
+    var day = formatted.getDate();
+    var year = formatted.getFullYear();
+    var month = months[formatted.getMonth()];
+    return month + ' ' + day + ', ' + year;
   };
   

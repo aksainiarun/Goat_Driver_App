@@ -9,6 +9,7 @@ import { Font_Heebo_Medium, Font_Lato_Bold } from '../../utils/typograpy'
 import OrderCard from '../orders/OrderCard'
 import { PRIMARY_COLOR } from '../../utils/colors'
 import Notification from './Notification'
+import { connect } from 'react-redux'
 
 
 const RenderTabs = ({ data, onPress, isSelected }) => {
@@ -23,10 +24,10 @@ const RenderCard = () => {
 }
 const TABS = ["All", "Confirm", "Delivered", "Rejected",]
 const BACKGROUND_COLOR = "rgba(255, 255, 255, 1)"
-export default class Home extends Component {
+class Home extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             scrollOffsetAnim: new Animated.Value(0),
             isSnapEnd: false,
@@ -152,7 +153,18 @@ export default class Home extends Component {
         )
     }
 }
-
+const mapStateToProps = state => {
+    return {
+      state: state.AuthReducer,
+    };
+  };
+  const mapDispatchToProps = dispatch => {
+    return {
+      // setStoreData: (data) =>dispatch({type: 'STORE_DATA', payload: data}),
+      // getHomeBanner: (storeId) =>dispatch(getHomeBanner(storeId),dispatch(getTopCategory(storeId)),dispatch(getHomeLayout(storeId))),
+    };
+  };
+  export default connect(mapStateToProps, mapDispatchToProps)(Home)
 const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
