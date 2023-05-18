@@ -11,6 +11,7 @@ import Icon from '../../../utils/icons'
 import { connect } from 'react-redux'
 import { postWithBody } from '../../../utils/appUtil/ApiHelper'
 import jwt_decode from "jwt-decode";
+import { getAllOrders, getByDriverId } from '../../../actions/thunkActions'
 
 class Login extends Component {
     constructor(props) {
@@ -32,6 +33,7 @@ class Login extends Component {
         .then(res=>{
             if(!res.err){
                 var decoded = jwt_decode(res.token);
+                console.log(decoded);
                 this.props.login({_id:decoded._id,email})
             }else{
                 alert(res.msg)
@@ -89,7 +91,7 @@ const mapStateToProps = state => {
   };
   const mapDispatchToProps = dispatch => {
     return {
-        login: (data) => dispatch({ type: 'SIGNIN', payload: data }),
+        login: (data) => dispatch({ type: 'SIGNIN', payload: data },dispatch(getByDriverId(data._id)),dispatch(getAllOrders(data._id))),
     };
   };
   export default connect(mapStateToProps, mapDispatchToProps)(Login)

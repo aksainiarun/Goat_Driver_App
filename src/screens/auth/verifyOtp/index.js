@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, TextInput } from 'react-native'
+import { Text, StyleSheet, View } from 'react-native'
 import React, { Component } from 'react'
 import Container from '../../../components/layout/Container'
 import Header from '../../../components/header/Header'
@@ -10,9 +10,11 @@ import OTPInputView from '@twotalltotems/react-native-otp-input'
 export default class VerifyOtp extends Component {
     constructor() {
         super();
-        this.state = {
-            code: 0
-        }
+    }
+    validateOTP(OTP){
+        const {email}=this.props.route.params
+        if(!email || !OTP){return}
+        this.props.navigation.navigate("reset-password",{email,OTP})
     }
     render() {
         return (
@@ -20,13 +22,12 @@ export default class VerifyOtp extends Component {
                 <Header />
                 <KeyboardAvoidingScrollView style={styles.container}>
                     <Text style={styles.textHeading}>Enter <Text style={{ color: PRIMARY_COLOR }}>OTP</Text></Text>
-                    <Text style={styles.textSubParagraph}>A verification codes has been sent to{'\n'}example@mail.com</Text>
+                    <Text style={styles.textSubParagraph}>A verification codes has been sent to{'\n'+this.props.route.params.email}</Text>
 
                     <OTPInputView
                         style={{ width: '100%', height: 45, marginBottom: 40, marginTop: 20 }}
                         pinCount={4}
-                        // code={this.state.code} //You can supply this prop or not. The component will be used as a controlled / uncontrolled component respectively.
-                        // onCodeChanged={code => { this.setState({ code: code }) }}                        
+                        onCodeChanged={code => { this.setState({ code: code }) }}                        
                         autoFocusOnLoad
                         codeInputFieldStyle={styles.textInputContainer}
                         codeInputHighlightStyle={styles.underlineStyleHighLighted}
@@ -34,13 +35,14 @@ export default class VerifyOtp extends Component {
                         placeholderTextColor={PLACEHOLDER_COLOR}
 
                         onCodeFilled={(code => {
-                            console.log(`Code is ${code}, you are good to go!`)
+                            this.validateOTP(code)
                         })}
                     />
+                    
                     <View style={{ paddingVertical: 10 }}>
                         <Button
                             title='Submit'
-                            onPress={() => this.props.navigation.navigate("reset-password")}
+                            onPress={() => this.validateOTP()}
                         />
                     </View>
                 </KeyboardAvoidingScrollView>

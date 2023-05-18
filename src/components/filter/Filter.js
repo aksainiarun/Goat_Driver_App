@@ -17,16 +17,25 @@ import DatePicker from 'react-native-date-picker'
  */
 const FILTER_ITEM = ["Delivered", "Accepted", "Rejected"]
 
-export default function Filter({ isVisible, onClose }) {
-    const [applyFilters, setApplyFilter] = useState([])
+export default function Filter({ isVisible, onClose,apply,clearFilter }) {
     const [startDate, setStartDate] = useState(new Date())
     const [endDate, setEndDate] = useState(new Date())
     const [startOpen, setStartOpen] = useState(false)
     const [endOpen, setEndOpen] = useState(false)
+    const [delivered, setDelivered] = useState(false)
+    const [accepted, setAccepted] = useState(false)
+    const [rejected, setRejected] = useState(false)
     const handleFilter = (item) => {
-        applyFilters.push(item)
+        item=='Delivered'?setDelivered(!delivered):null
+        item=='Accepted'?setAccepted(!accepted):null
+        item=='Rejected'?setRejected(!rejected):null
     }
-    const handelDateChange = () => { }
+    const clearAll = (item) => {
+        setDelivered(false)
+        setAccepted(false)
+        setRejected(false)
+        clearFilter()
+    }
     return (
         <Modal visible={isVisible} onRequestClose={onClose && onClose} transparent animationType='slide'>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20, backgroundColor: "rgba(0,0,0,0.2)" }}>
@@ -78,7 +87,7 @@ export default function Filter({ isVisible, onClose }) {
                     <View style={styles.suHeadings}>
                         <Text style={{ fontSize: 18, fontFamily: Font_Heebo_Medium, color: "#000" }}>Order Status</Text>
                         <View style={styles.clearAll}>
-                            <Text style={{ fontSize: 12, fontFamily: Font_Heebo_Regular, color: "#000" }}>Clear All</Text>
+                            <Text style={{ fontSize: 12, fontFamily: Font_Heebo_Regular, color: "#000" }} onPress={()=>clearAll()}>Clear All</Text>
                         </View>
                     </View>
                     <View style={{ flex: 1 }}>
@@ -88,7 +97,8 @@ export default function Filter({ isVisible, onClose }) {
                             renderItem={({ item, index }) => <TouchableRipple onPress={() => handleFilter(item)} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 20, paddingHorizontal: 14, borderBottomWidth: 1, borderBottomColor: "rgba(240, 240, 240, 1)" }}>
                                 <React.Fragment>
                                     <Text style={{ fontSize: 16, fontFamily: Font_Heebo_SemiBold, color: "#000", lineHeight: 20 }}>{item}</Text>
-                                    <RadioButton />
+                                    <RadioButton status={item=='Delivered'&&delivered || item=='Accepted'&&accepted|| item=='Rejected'&&rejected}
+                                     onPress={()=>handleFilter(item)} />
                                 </React.Fragment>
                             </TouchableRipple>}
                             keyExtractor={(item) => item}
@@ -96,7 +106,7 @@ export default function Filter({ isVisible, onClose }) {
                     </View>
                     <View style={{ padding: 14 }}>
                         <Button
-                            title='Apply'
+                            title='Apply' onPress={()=>apply(delivered,accepted,rejected)}
                         />
                     </View>
                 </View>

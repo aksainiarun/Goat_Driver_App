@@ -6,8 +6,30 @@ import { Font_Heebo_Medium, Font_Heebo_Regular, Font_Lato_Bold } from '../../../
 import { GRAY_COLOR, PRIMARY_COLOR } from '../../../utils/colors'
 import Button from '../../../components/button/Button'
 import { KeyboardAvoidingScrollView } from 'react-native-keyboard-avoiding-scroll-view'
+import { postWithBody } from '../../../utils/appUtil/ApiHelper'
 
 export default class ForgotPassword extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email:'',
+        }
+    }
+    onChangeText(val, key) {
+        this.setState({ [key]: val })
+    }
+    sendOTP(){
+        const {email}=this.state
+        if(!email){return}
+        postWithBody('driver/forgotPassword',JSON.stringify({email}))
+        .then(res=>{
+            if(!res.err){
+                this.props.navigation.navigate("verify-otp",{email})
+            }else{
+                alert(res.msg)
+            }
+        }).catch(error=>{console.log(error);})
+    }
     render() {
         return (
             <Container>
@@ -16,12 +38,13 @@ export default class ForgotPassword extends Component {
                     <Text style={styles.textHeading}>Forgot <Text style={{ color: PRIMARY_COLOR }}>Password</Text></Text>
                     <Text style={styles.textSubParagraph}>Enter your email id</Text>
                     <View style={styles.textInputContainer}>
-                        <TextInput placeholder='Enter email address' style={styles.textInput} />
+                        <TextInput placeholder='Enter email address' style={styles.textInput} 
+                        onChangeText={(val) => this.onChangeText(val, 'email')}/>
                     </View>
                     <View style={{ paddingVertical: 10 }}>
                         <Button
                             title='Submit'
-                            onPress={() => this.props.navigation.navigate("verify-otp")}
+                            onPress={() => this.sendOTP()}
                         />
                     </View>
                 </KeyboardAvoidingScrollView>

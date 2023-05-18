@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, ScrollView, TextInput, Image } from 'react-native'
+import { Text, StyleSheet, View, ScrollView, TextInput, Image, Alert } from 'react-native'
 import React, { Component } from 'react'
 import Container from '../../../components/layout/Container'
 import { GRAY_COLOR, PLACEHOLDER_COLOR, PRIMARY_LIGHT_COLOR } from '../../../utils/colors'
@@ -10,9 +10,63 @@ import { AVATAR } from '../../../utils/images'
 import Icon from '../../../utils/icons'
 import { KeyboardAvoidingScrollView } from 'react-native-keyboard-avoiding-scroll-view'
 import { TouchableRipple } from 'react-native-paper'
+import { connect } from 'react-redux'
+import { UploadImageService } from '../../../utils/images/UploadImageService'
+import GetLocation from 'react-native-get-location';
+import { putRequestWithBody } from '../../../utils/appUtil/ApiHelper'
+import { getByDriverId } from '../../../actions/thunkActions'
+class EditProfile extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstName: this.props.data.firstName?this.props.data.firstName:'',
+            lastName: this.props.data.lastName?this.props.data.lastName:'',
+            contact: this.props.data.contact?this.props.data.contact:'',
+            profilePhoto: this.props.data.profilePhoto?this.props.data.profilePhoto:'',
 
-export default class EditProfile extends Component {
+        }
+    }
+
+    onChangeText(val, key) {
+        this.setState({ [key]: val })
+    }
+    getImage = () => {
+        UploadImageService().then(res => {
+            this.setState({ profilePhoto: res });
+        });
+    };
+    async updateProfile() {
+        const body = new FormData();
+        await GetLocation.getCurrentPosition({
+            enableHighAccuracy: true,
+            timeout: 15000,
+          }).then(location=>{
+            body.append('longitude',location.latitude);
+            body.append('latitude',location.longitude);
+        }).catch(error=>{console.log(error);})
+        body.append('profilePhoto', {
+            uri: this.state.profilePhoto,
+            name: this.props.data._id,
+            type: 'image/*',
+        });
+        body.append('firstName', this.state.firstName);
+        body.append('lastName', this.state.lastName);
+        body.append('contact', this.state.contact);
+        body.append('driverId',this.props.data._id);
+        body.append('address',"address");
+        console.log(body);
+        putRequestWithBody('driver/update',body)
+        .then(res=>{
+            if(!res.err){
+                this.props.getProfile(this.props.data._id)
+            }else{
+                alert(res.msg)
+            }
+        }).catch(err=>{console.log(err);})
+    }
     render() {
+        const { firstName, lastName, contact, profilePhoto } = this.state
+        const { data } = this.props
         return (
             <Container>
                 <Header headerTitle='Edit Profile' />
@@ -20,27 +74,36 @@ export default class EditProfile extends Component {
                     <View style={styles.container}>
                         <View style={{ alignItems: 'center', marginVertical: 25 }}>
                             <View style={styles.imageContainer}>
-                                <Image source={AVATAR} style={{ width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3, borderRadius: SCREEN_WIDTH * 0.3, marginBottom: 10 }} />
+                                <Image source={profilePhoto ? { uri: profilePhoto } : AVATAR} style={{ width: SCREEN_WIDTH * 0.3, height: SCREEN_WIDTH * 0.3, borderRadius: SCREEN_WIDTH * 0.3, marginBottom: 10 }} />
                                 <View style={{ position: 'absolute', bottom: 0, right: 0 }}>
-                                    <Icon name='edit' type='feather' style={styles.editIcon} color='#000' />
+                                    <Icon name='edit' type='feather' style={styles.editIcon} color='#000'
+                                        onPress={() => this.getImage()} />
                                 </View>
                             </View>
                         </View>
                         <View style={styles.inputContainer}>
-                            <TextInput placeholder='Full Name' value='Alex Walker' style={styles.textInput} placeholderTextColor={PLACEHOLDER_COLOR} />
+                            <TextInput placeholder='First Name' value={firstName} style={styles.textInput} placeholderTextColor={PLACEHOLDER_COLOR}
+                                onChangeText={(val) => this.onChangeText(val, 'firstName')} />
                         </View>
                         <View style={styles.inputContainer}>
-                            <TextInput placeholder='example@gmail.com' value='example@gmail.com' editable={false} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR} />
+                            <TextInput placeholder='Last Name' value={lastName} style={styles.textInput} placeholderTextColor={PLACEHOLDER_COLOR}
+                                onChangeText={(val) => this.onChangeText(val, 'lastName')} />
                         </View>
                         <View style={styles.inputContainer}>
-                            <TextInput placeholder='Goat Id' value='GOAT142536' editable={false} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR} />
+                            <TextInput placeholder='example@gmail.com' value={data.email} editable={false} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR} />
+                        </View>
+                        <View style={styles.inputContainer}>
+                            <TextInput placeholder='Goat Id' value={'GOAT'+data.displayId} editable={false} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR} />
                         </View>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={[styles.inputContainer, { width: 60, marginRight: 12, paddingHorizontal: 5, }]}>
-                                <TextInput placeholder='Phone no' value='+1' style={[styles.textInput, { color: "#585858", textAlign: 'center' }]} placeholderTextColor={PLACEHOLDER_COLOR} />
+                                <TextInput placeholder='Phone no' value='+91' style={[styles.textInput, { color: "#585858", textAlign: 'center' }]} placeholderTextColor={PLACEHOLDER_COLOR}
+                                />
                             </View>
                             <View style={[styles.inputContainer, { flex: 1 }]}>
-                                <TextInput placeholder='Phone no' value='1234567890' style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR} />
+                                <TextInput placeholder='Phone no' value={contact} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR}
+                                maxLength={10}
+                                    onChangeText={(val) => this.onChangeText(val, 'contact')} />
                             </View>
                         </View>
                         <TouchableRipple onPress={() => this.props.navigation.navigate("change-password")} style={[styles.inputContainer, { justifyContent: 'center' }]}>
@@ -51,7 +114,7 @@ export default class EditProfile extends Component {
                 <View style={{ padding: 14 }}>
                     <Button
                         title='Save'
-                        onPress={() => this.props.navigation.goBack()}
+                        onPress={() => this.updateProfile()}
                     />
                 </View>
             </Container>
@@ -59,6 +122,17 @@ export default class EditProfile extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        data: state.AuthReducer.data,
+    };
+};
+const mapDispatchToProps = dispatch => {
+    return {
+        getProfile: (_id) => dispatch(getByDriverId(_id)),
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(EditProfile)
 const styles = StyleSheet.create({
     container: {
         flex: 1,

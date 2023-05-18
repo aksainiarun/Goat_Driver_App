@@ -7,16 +7,36 @@ import { GRAY_COLOR, PRIMARY_COLOR } from '../../../utils/colors'
 import Button from '../../../components/button/Button'
 import { KeyboardAvoidingScrollView } from 'react-native-keyboard-avoiding-scroll-view'
 import Icon from '../../../utils/icons'
+import { postWithBody } from '../../../utils/appUtil/ApiHelper'
 
 export default class ResetPassword extends Component {
     constructor() {
         super();
         this.state = {
-            isPasswordView: false
+            isPasswordView: false,
+            password:'',
+            confirmPassword:''
         }
     }
     handlePasswordState = () => {
         this.setState({ isPasswordView: !this.state.isPasswordView })
+    }
+    resetPassword(){
+        const {email,OTP}=this.props.route.params
+        let {password,confirmPassword}=this.state
+        if(!password || password !=confirmPassword){return}
+        let body={email,password,OTP}
+        postWithBody('driver/resetPassword',JSON.stringify(body))
+        .then(res=>{
+            if(!res.err){
+                this.props.navigation.navigate("login")
+            }else{
+                alert(res.msg)
+            }
+        }).catch(error=>{console.log(error);})
+    }
+    onChangeText(val, key) {
+        this.setState({ [key]: val })
     }
     render() {
         const { isPasswordView } = this.state
@@ -27,16 +47,18 @@ export default class ResetPassword extends Component {
                     <Text style={styles.textHeading}>Reset <Text style={{ color: PRIMARY_COLOR }}>Password</Text></Text>
                     <Text style={styles.textSubParagraph}>Create new password</Text>
                     <View style={styles.textInputContainer}>
-                        <TextInput placeholder='Enter New Password' secureTextEntry style={styles.textInput} />
+                        <TextInput placeholder='Enter New Password' style={styles.textInput} 
+                        onChangeText={(val) => this.onChangeText(val, 'password')}/>
                     </View>
                     <View style={styles.textInputContainer}>
-                        <TextInput placeholder='Confirm Password' secureTextEntry={!isPasswordView} style={styles.textInput} />
+                        <TextInput placeholder='Confirm Password' secureTextEntry={!isPasswordView} style={styles.textInput} 
+                        onChangeText={(val) => this.onChangeText(val, 'confirmPassword')}/>
                         <Icon name={isPasswordView ? 'eye' : 'eye-off'} color='rgba(0,0,0,0.3)' size={25} onPress={this.handlePasswordState} />
                     </View>
                     <View style={{ paddingVertical: 10 }}>
                         <Button
                             title='Submit'
-                            onPress={() => this.props.navigation.navigate("login")}
+                            onPress={() => this.resetPassword()}
                         />
                     </View>
                 </KeyboardAvoidingScrollView>

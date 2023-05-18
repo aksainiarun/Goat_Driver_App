@@ -35,19 +35,20 @@ class Profile extends Component {
     }
     render() {
         const { isLogout } = this.state
+        const {data}=this.props
         return (
             <Container>
                 <View>
                     <Header headerTitle='My Profile' />
                 </View>
                 <View>
-                    <Image source={{ uri: "https://img.freepik.com/premium-vector/vector-cityscape-background-with-seamless-pattern_554888-1131.jpg" }} style={{ width: SCREEN_WIDTH, height: 150, }} />
+                    <Image source={{ uri:"https://img.freepik.com/premium-vector/vector-cityscape-background-with-seamless-pattern_554888-1131.jpg" }} style={{ width: SCREEN_WIDTH, height: 150, }} />
                     <View style={{ alignItems: 'center', marginTop: -(SCREEN_WIDTH * 0.26) / 2 }}>
-                        <Image source={AVATAR} style={{ width: SCREEN_WIDTH * 0.26, height: SCREEN_WIDTH * 0.26, borderRadius: SCREEN_WIDTH * 0.26, marginBottom: 10 }} />
+                        <Image source={ data.profilePhoto?{uri:data.profilePhoto}:AVATAR} style={{ width: SCREEN_WIDTH * 0.26, height: SCREEN_WIDTH * 0.26, borderRadius: SCREEN_WIDTH * 0.26, marginBottom: 10 }} />
                         <View style={{ alignItems: 'center', }}>
-                            <Text style={{ fontSize: 25, fontFamily: Font_Lato_Bold, color: "#000", lineHeight: 30.45 }}>Alex Walker</Text>
-                            <Text style={{ fontSize: 14, fontFamily: Font_Heebo_Medium, color: "#9A9A9A", lineHeight: 20.45 }}>example@gmail.com</Text>
-                            <Text style={{ fontSize: 13, fontFamily: Font_Heebo_Medium, color: "#9A9A9A", lineHeight: 20.45 }}>Id: GOAT142536</Text>
+                            <Text style={{ fontSize: 25, fontFamily: Font_Lato_Bold, color: "#000", lineHeight: 30.45 }}>{data.firstName} {data.lastName}</Text>
+                            <Text style={{ fontSize: 14, fontFamily: Font_Heebo_Medium, color: "#9A9A9A", lineHeight: 20.45 }}>{data.email}</Text>
+                            <Text style={{ fontSize: 13, fontFamily: Font_Heebo_Medium, color: "#9A9A9A", lineHeight: 20.45 }}>Id: GOAT{data.displayId}</Text>
                         </View>
                     </View>
                 </View>
@@ -64,7 +65,7 @@ class Profile extends Component {
 }
 const mapStateToProps = state => {
     return {
-      state: state.AuthReducer,
+      data: state.AuthReducer.data,
     };
   };
   const mapDispatchToProps = dispatch => {

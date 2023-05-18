@@ -10,11 +10,12 @@ import OrderCard from '../orders/OrderCard'
 import { PRIMARY_COLOR } from '../../utils/colors'
 import Notification from './Notification'
 import { connect } from 'react-redux'
+import { getAllOrders } from '../../actions/thunkActions'
 
 
 const RenderTabs = ({ data, onPress, isSelected }) => {
     return <TouchableRipple onPress={onPress && onPress} borderless style={{ backgroundColor: "#fff", borderWidth: 1, borderRadius: 20, paddingVertical: 5, paddingHorizontal: 17, borderColor: isSelected ? PRIMARY_COLOR : "#000" }}>
-        <Text style={{ fontSize: 13, color: isSelected ? PRIMARY_COLOR : "#000", fontFamily: Font_Heebo_Medium }}>{data}</Text>
+        <Text style={{ fontSize: 13, color: isSelected ? PRIMARY_COLOR : "#000", fontFamily: Font_Heebo_Medium,textTransform:'capitalize' }}>{data}</Text>
     </TouchableRipple>
 }
 const RenderCard = () => {
@@ -22,7 +23,7 @@ const RenderCard = () => {
         <View></View>
     )
 }
-const TABS = ["All", "Confirm", "Delivered", "Rejected",]
+const TABS = ["All", "confirm", "delivered", "rejected",]
 const BACKGROUND_COLOR = "rgba(255, 255, 255, 1)"
 class Home extends Component {
 
@@ -38,6 +39,7 @@ class Home extends Component {
 
     componentDidMount() {
         this.initialScroll()
+        this.props.getAllOrders(this.props.data.id)
     }
 
     initialScroll = () => {
@@ -78,7 +80,7 @@ class Home extends Component {
                     <View style={styles.header}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <TouchableRipple borderless style={styles.avatarContainer} onPress={() => this.props.navigation.navigate("profile")}>
-                                <Image source={AVATAR} style={styles.avatar} />
+                                <Image source={this.props.data?.profilePhoto?{uri:this.props.data?.profilePhoto}:AVATAR} style={styles.avatar} />
                             </TouchableRipple>
                             <Animated.View style={{ paddingHorizontal: 10, opacity: HEADER_OPACITY }}>
                                 <Text style={{ fontSize: 25, fontFamily: Font_Lato_Bold, color: "#000" }}>My Task</Text>
@@ -143,8 +145,8 @@ class Home extends Component {
                                 renderItem={({ item, index }) => <RenderTabs data={item} onPress={() => this.handleTabs(item)} isSelected={item === selectedTab} />}
                             />
                         </View>
-                        <View>
-                            {TABS.map((item, index) => <OrderCard key={item.toString()} data={item} orderStatus='delivered' />)}
+                        <View style={{height:500}}>
+                            {this.props.orders.map((item, index) => selectedTab==item.status || selectedTab=='All'?<OrderCard key={index} data={item} orderStatus={item.status} />:null)}
                         </View>
                     </View>
                 </ScrollView>
@@ -155,14 +157,14 @@ class Home extends Component {
 }
 const mapStateToProps = state => {
     return {
-      state: state.AuthReducer,
+      data: state.AuthReducer.data,
+      orders:state.AuthReducer.orders,
     };
   };
   const mapDispatchToProps = dispatch => {
     return {
-      // setStoreData: (data) =>dispatch({type: 'STORE_DATA', payload: data}),
-      // getHomeBanner: (storeId) =>dispatch(getHomeBanner(storeId),dispatch(getTopCategory(storeId)),dispatch(getHomeLayout(storeId))),
-    };
+      getAllOrders: (id) =>dispatch(getAllOrders(id)),
+      };
   };
   export default connect(mapStateToProps, mapDispatchToProps)(Home)
 const styles = StyleSheet.create({

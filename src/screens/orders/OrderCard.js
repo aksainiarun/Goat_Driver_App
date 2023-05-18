@@ -7,6 +7,7 @@ import Icon from '../../utils/icons'
 import ProgressStrip from '../../components/progress/ProgressStrip'
 import { useNavigation } from '@react-navigation/native';
 import { TouchableRipple } from 'react-native-paper';
+import { getFullDate } from '../../utils/appUtil/appUtil';
 
 const InProgressBadge = () => {
     return <View style={{ backgroundColor: "rgba(253, 183, 20, 1)", paddingHorizontal: 8, paddingVertical: 4, borderRadius: 100, }}>
@@ -32,7 +33,7 @@ const CanceledBadge = () => {
  * 
  */
 
-export default function OrderCard({ orderStatus }) {
+export default function OrderCard({ orderStatus,data }) {
     const [isItemView, setIsItemView] = useState(false)
     const handleShowItems = () => {
         LayoutAnimation.easeInEaseOut();
@@ -43,7 +44,6 @@ export default function OrderCard({ orderStatus }) {
             UIManager.setLayoutAnimationEnabledExperimental(true);
         }
     }
-
     const navigation = useNavigation()
     const backgroundColor = orderStatus === 'delivered' ? "rgba(94, 180, 17, 0.1)" : orderStatus === 'canceled' ? "rgba(253, 1, 1, 0.1)" : orderStatus === 'pending' ? "rgba(253, 183, 20, 0.1)" : null
     const ORDER_STATUS = orderStatus === 'delivered' ? <DeliveredBadge /> : orderStatus === 'canceled' ? <CanceledBadge /> : orderStatus === 'pending' ? <InProgressBadge /> : null
@@ -51,12 +51,12 @@ export default function OrderCard({ orderStatus }) {
         <View style={styles.card}>
             <View style={[styles.cardHeader, { backgroundColor }]}>
                 <View style={styles.flexRow}>
-                    <Text style={styles.text}>Order ID: <Text style={{ fontFamily: Font_Heebo_Bold }}>124561231245</Text></Text>
+                    <Text style={styles.text}>Order ID: <Text style={{ fontFamily: Font_Heebo_Bold }}>{data.orderNumber}</Text></Text>
                     {ORDER_STATUS}
                 </View>
                 <View style={styles.flexRow}>
-                    <Text style={styles.text}>Delivery Date: <Text style={{ fontFamily: Font_Heebo_Bold }}>Jan 02,2023</Text></Text>
-                    <Text style={styles.text}>Total Amount: <Text style={{ fontFamily: Font_Heebo_Bold }}>$500</Text></Text>
+                    <Text style={styles.text}>Delivery Date: <Text style={{ fontFamily: Font_Heebo_Bold }}>{getFullDate(data.createdAt)}</Text></Text>
+                    <Text style={styles.text}>Total Amount: <Text style={{ fontFamily: Font_Heebo_Bold }}>${data.total}</Text></Text>
                 </View>
                 <View>
                     <Text style={styles.text}>Delivery Time: <Text style={{ fontFamily: Font_Heebo_Bold }}>10:00 AM to 12:30 PM</Text></Text>
@@ -68,7 +68,7 @@ export default function OrderCard({ orderStatus }) {
                         <Text style={styles.text}>Order Date:</Text>
                     </View>
                     <View style={{ flex: 1 }}>
-                        <Text style={styles.text}>Dec 25, 2022</Text>
+                        <Text style={styles.text}>{getFullDate(data.createdAt)}</Text>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginBottom: 14 }}>
@@ -76,19 +76,16 @@ export default function OrderCard({ orderStatus }) {
                         <Text style={styles.text}>Shipping Address:</Text>
                     </View>
                     <View style={{ flex: 1 }}>
-                        <Text style={[styles.text, { fontSize: 16 }]}>Alex Walker</Text>
-                        <Text style={styles.text}>H 703,  Bestech Grand Spa Park View Sector 81 Gurugram 120022</Text>
+                        <Text style={[styles.text, { fontSize: 16 }]}>{data.address.firstName} {data.address.lastName}</Text>
+                        <Text style={styles.text}>{data.address.address} {data.address.address2}</Text>
                     </View>
                 </View>
             </View>
             <View style={{ padding: 14, borderTopColor: "rgba(200,200,200,1)", borderTopWidth: 0.5 }}>
                 {!isItemView && <TouchableOpacity onPress={handleShowItems} style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Image style={{ width: 40, height: 40, marginRight: 8 }} source={{ uri: "https://firstbase.in/phpfiles/2020/04/3_Frozen_Food_Packaging_Design_Delhi_Mumbai.jpg" }} />
-                    <Image style={{ width: 40, height: 40, marginRight: 8 }} source={{ uri: "https://firstbase.in/phpfiles/2020/04/3_Frozen_Food_Packaging_Design_Delhi_Mumbai.jpg" }} />
-                    <Image style={{ width: 40, height: 40, marginRight: 8 }} source={{ uri: "https://firstbase.in/phpfiles/2020/04/3_Frozen_Food_Packaging_Design_Delhi_Mumbai.jpg" }} />
-                    <Image style={{ width: 40, height: 40, marginRight: 8 }} source={{ uri: "https://firstbase.in/phpfiles/2020/04/3_Frozen_Food_Packaging_Design_Delhi_Mumbai.jpg" }} />
+                {data.products.map((item,index)=>(<Image style={{ width: 40, height: 40, marginRight: 8 }} source={{ uri: item.images }} />))}
                     <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
-                        <Text style={{ fontSize: 14, color: "#000", fontFamily: Font_Heebo_Medium, }} numberOfLines={1} adjustsFontSizeToFit>View 21 Items</Text>
+                        <Text style={{ fontSize: 14, color: "#000", fontFamily: Font_Heebo_Medium, }} numberOfLines={1} adjustsFontSizeToFit>View {data.products.length} Items</Text>
                         <Icon name='chevron-down' />
                     </View>
                 </TouchableOpacity>}
@@ -98,14 +95,11 @@ export default function OrderCard({ orderStatus }) {
                             <Text style={{ fontSize: 14, color: "#000", fontFamily: Font_Heebo_Medium, }}>Poultry</Text>
                         </View>
                         <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
-                            <Text style={{ fontSize: 14, color: "#000", fontFamily: Font_Heebo_Medium, }} >View 21 Items</Text>
+                            <Text style={{ fontSize: 14, color: "#000", fontFamily: Font_Heebo_Medium, }} >View {data.products.length} Items</Text>
                             <Icon name='chevron-up' />
                         </View>
                     </TouchableOpacity>
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
+                    {data.products.map((item,index)=>(<ProductCard data={item} key={index} />))}
                 </View>}
 
 

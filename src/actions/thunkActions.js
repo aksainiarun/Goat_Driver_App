@@ -1,11 +1,33 @@
-export const lastOrderAddress = () => {
+import { getRequest } from "../utils/appUtil/ApiHelper";
+
+export const getByDriverId = (id) => {
   return dispatch => {
-    getLastOrderAddressApi()
-        .then(address => {
-          dispatch({type: 'LAST_ORDER_ADDRESS', payload: address?.data});
+    getRequest('driver/getByDriverId/'+id)
+        .then(data => {
+          if(!data.err){
+          dispatch({type: 'SIGNIN', payload: data.driver})
+        }else{
+          alert(data.msg)
+        }
         })
         .catch(error => {
-          console.log(error);
+          console.log(error,"getByDriverId");
+        });
+  };
+};
+
+export const getAllOrders = (id) => {
+  return dispatch => {
+    getRequest('driverOrder/getByDriverId/'+'643f9cf6922228595c118622')
+        .then(data => {
+          if(!data.err){
+          dispatch({type: 'ORDERS', payload: data.order})
+        }else{
+          alert(data.msg)
+        }
+        })
+        .catch(error => {
+          console.log(error,"getByDriverId");
         });
   };
 };
