@@ -9,27 +9,27 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* Goat_Driver_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* Goat_Driver_AppTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-Goat_Driver_App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Goat_Driver_App.a */; };
+		10F92CAC4F0B49DE8A3EA0F5 /* Heebo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09322DFFD79F4D659C2213A0 /* Heebo-SemiBold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D5D4DEFC759745A8B4674EF0 /* Heebo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D97CEF6708FB4A10B28D9DD4 /* Heebo-Bold.ttf */; };
 		223F50BF87E84408BD374363 /* Heebo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9B69B7BFC3440A5BACAB180 /* Heebo-Light.ttf */; };
 		224B8B3587754D6193EC61B1 /* Heebo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EB69B2105CC4220BAA526C1 /* Heebo-Medium.ttf */; };
-		8A5431B942FE467FB3069E49 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C386CF66A12E45A480EF71CC /* Heebo-Regular.ttf */; };
-		10F92CAC4F0B49DE8A3EA0F5 /* Heebo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09322DFFD79F4D659C2213A0 /* Heebo-SemiBold.ttf */; };
-		DDBEE902D0DF4007A624959D /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F758A130CE2C4B2B91555532 /* Lato-Black.ttf */; };
-		799F19155EA3404BAAA14126 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55B0F2F884A74B17870694B4 /* Lato-Bold.ttf */; };
+		253FC3659B4C41DBBBB55EF8 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 680F4812714D423790BC3A35 /* Poppins-ExtraLight.ttf */; };
+		4CDDE7749A1044E09CBC2519 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1725D3B691404570811C9C73 /* Poppins-Medium.ttf */; };
+		4F8337C1923242FA9F047083 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD1F26DDD78D42D48F34BC8D /* Poppins-SemiBold.ttf */; };
+		50E3BF1035FD4740B803F933 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DA453347DCA4F9898B1B771 /* Poppins-Bold.ttf */; };
 		5382147222DF4C7599F6FB47 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1838B8D1B5B143B487B5E303 /* Lato-Light.ttf */; };
 		5A4A24BE863E4EEE944DA52F /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA67A09A378144F897D5E014 /* Lato-Regular.ttf */; };
-		50E3BF1035FD4740B803F933 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DA453347DCA4F9898B1B771 /* Poppins-Bold.ttf */; };
-		D1B272154E70474CBFBCA52D /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCCAB9508E704D33A9955098 /* Poppins-ExtraBold.ttf */; };
-		253FC3659B4C41DBBBB55EF8 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 680F4812714D423790BC3A35 /* Poppins-ExtraLight.ttf */; };
 		5D5DF464033A45FD8F3A87EF /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FC36F5DC740649925A3C0 /* Poppins-Light.ttf */; };
-		4CDDE7749A1044E09CBC2519 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1725D3B691404570811C9C73 /* Poppins-Medium.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a */; };
+		799F19155EA3404BAAA14126 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55B0F2F884A74B17870694B4 /* Lato-Bold.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8A5431B942FE467FB3069E49 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C386CF66A12E45A480EF71CC /* Heebo-Regular.ttf */; };
 		B6DE613BBFAF4618BAF612DA /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 571C63C4FB5A47F3B24EA1F4 /* Poppins-Regular.ttf */; };
-		4F8337C1923242FA9F047083 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD1F26DDD78D42D48F34BC8D /* Poppins-SemiBold.ttf */; };
+		D1B272154E70474CBFBCA52D /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCCAB9508E704D33A9955098 /* Poppins-ExtraBold.ttf */; };
+		D5D4DEFC759745A8B4674EF0 /* Heebo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D97CEF6708FB4A10B28D9DD4 /* Heebo-Bold.ttf */; };
+		DDBEE902D0DF4007A624959D /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F758A130CE2C4B2B91555532 /* Lato-Black.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,36 +46,36 @@
 		00E356EE1AD99517003FC87E /* Goat_Driver_AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Goat_Driver_AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* Goat_Driver_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Goat_Driver_AppTests.m; sourceTree = "<group>"; };
+		09322DFFD79F4D659C2213A0 /* Heebo-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-SemiBold.ttf"; path = "../src/assets/fonts/Heebo-SemiBold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Goat_Driver_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goat_Driver_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Goat_Driver_App/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Goat_Driver_App/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Goat_Driver_App/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Goat_Driver_App/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Goat_Driver_App/main.m; sourceTree = "<group>"; };
+		1725D3B691404570811C9C73 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		1838B8D1B5B143B487B5E303 /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../src/assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Goat_Driver_App-Goat_Driver_AppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DA453347DCA4F9898B1B771 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Goat_Driver_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goat_Driver_App.debug.xcconfig"; path = "Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App.debug.xcconfig"; sourceTree = "<group>"; };
+		55B0F2F884A74B17870694B4 /* Lato-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Bold.ttf"; path = "../src/assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Goat_Driver_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goat_Driver_App.release.xcconfig"; path = "Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App.release.xcconfig"; sourceTree = "<group>"; };
+		571C63C4FB5A47F3B24EA1F4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Goat_Driver_App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Goat_Driver_App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		680F4812714D423790BC3A35 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Goat_Driver_App/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig"; path = "Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8EB69B2105CC4220BAA526C1 /* Heebo-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Medium.ttf"; path = "../src/assets/fonts/Heebo-Medium.ttf"; sourceTree = "<group>"; };
+		9D1FC36F5DC740649925A3C0 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
+		BCCAB9508E704D33A9955098 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C386CF66A12E45A480EF71CC /* Heebo-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Regular.ttf"; path = "../src/assets/fonts/Heebo-Regular.ttf"; sourceTree = "<group>"; };
+		CD1F26DDD78D42D48F34BC8D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		D97CEF6708FB4A10B28D9DD4 /* Heebo-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Bold.ttf"; path = "../src/assets/fonts/Heebo-Bold.ttf"; sourceTree = "<group>"; };
+		D9B69B7BFC3440A5BACAB180 /* Heebo-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Light.ttf"; path = "../src/assets/fonts/Heebo-Light.ttf"; sourceTree = "<group>"; };
+		DA67A09A378144F897D5E014 /* Lato-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Regular.ttf"; path = "../src/assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		D97CEF6708FB4A10B28D9DD4 /* Heebo-Bold.ttf */ = {isa = PBXFileReference; name = "Heebo-Bold.ttf"; path = "../src/assets/fonts/Heebo-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D9B69B7BFC3440A5BACAB180 /* Heebo-Light.ttf */ = {isa = PBXFileReference; name = "Heebo-Light.ttf"; path = "../src/assets/fonts/Heebo-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8EB69B2105CC4220BAA526C1 /* Heebo-Medium.ttf */ = {isa = PBXFileReference; name = "Heebo-Medium.ttf"; path = "../src/assets/fonts/Heebo-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C386CF66A12E45A480EF71CC /* Heebo-Regular.ttf */ = {isa = PBXFileReference; name = "Heebo-Regular.ttf"; path = "../src/assets/fonts/Heebo-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		09322DFFD79F4D659C2213A0 /* Heebo-SemiBold.ttf */ = {isa = PBXFileReference; name = "Heebo-SemiBold.ttf"; path = "../src/assets/fonts/Heebo-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F758A130CE2C4B2B91555532 /* Lato-Black.ttf */ = {isa = PBXFileReference; name = "Lato-Black.ttf"; path = "../src/assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		55B0F2F884A74B17870694B4 /* Lato-Bold.ttf */ = {isa = PBXFileReference; name = "Lato-Bold.ttf"; path = "../src/assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1838B8D1B5B143B487B5E303 /* Lato-Light.ttf */ = {isa = PBXFileReference; name = "Lato-Light.ttf"; path = "../src/assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DA67A09A378144F897D5E014 /* Lato-Regular.ttf */ = {isa = PBXFileReference; name = "Lato-Regular.ttf"; path = "../src/assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2DA453347DCA4F9898B1B771 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BCCAB9508E704D33A9955098 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		680F4812714D423790BC3A35 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9D1FC36F5DC740649925A3C0 /* Poppins-Light.ttf */ = {isa = PBXFileReference; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1725D3B691404570811C9C73 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		571C63C4FB5A47F3B24EA1F4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CD1F26DDD78D42D48F34BC8D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F758A130CE2C4B2B91555532 /* Lato-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Black.ttf"; path = "../src/assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,19 +170,8 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3B4392A12AC88292D35C810B /* Pods-Goat_Driver_App.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-Goat_Driver_App.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		9A7E1A9B14F34451B0A1B4D0 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				D97CEF6708FB4A10B28D9DD4 /* Heebo-Bold.ttf */,
 				D9B69B7BFC3440A5BACAB180 /* Heebo-Light.ttf */,
@@ -202,8 +191,19 @@
 				CD1F26DDD78D42D48F34BC8D /* Poppins-SemiBold.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B4392A12AC88292D35C810B /* Pods-Goat_Driver_App.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-Goat_Driver_App.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

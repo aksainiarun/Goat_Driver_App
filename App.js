@@ -5,8 +5,12 @@ import RootNavigation from './src/navigation/RootNavigation'
 import { store, persistor } from './src/Reducer';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import SplashScreen from 'react-native-splash-screen'
 
 export default class App extends Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
   render() {
     if (Text.defaultProps == null) Text.defaultProps = {};
     Text.defaultProps.allowFontScaling = false;
@@ -17,9 +21,9 @@ export default class App extends Component {
         <PersistGate
           //  loading={<Text>Loading...</Text>} 
           persistor={persistor}>
-            <NavigationContainer>
-              <RootNavigation />
-            </NavigationContainer>
+          <NavigationContainer>
+            <RootNavigation />
+          </NavigationContainer>
         </PersistGate>
       </Provider>
     )
