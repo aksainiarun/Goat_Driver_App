@@ -14,32 +14,36 @@ export default class ResetPassword extends Component {
         super();
         this.state = {
             isPasswordView: false,
-            password:'',
-            confirmPassword:''
+            password: '',
+            confirmPassword: '',
+            isLoading: false,
         }
     }
     handlePasswordState = () => {
         this.setState({ isPasswordView: !this.state.isPasswordView })
     }
-    resetPassword(){
-        const {email,OTP}=this.props.route.params
-        let {password,confirmPassword}=this.state
-        if(!password || password !=confirmPassword){return}
-        let body={email,password,OTP}
-        postWithBody('driver/resetPassword',JSON.stringify(body))
-        .then(res=>{
-            if(!res.err){
-                this.props.navigation.navigate("login")
-            }else{
-                alert(res.msg)
-            }
-        }).catch(error=>{console.log(error);})
+    resetPassword() {
+        const { email, OTP } = this.props.route.params
+        let { password, confirmPassword } = this.state
+        if (!password || password != confirmPassword) { return }
+        let body = { email, password, OTP }
+        this.setState({ isLoading: true })
+        postWithBody('driver/resetPassword', JSON.stringify(body))
+            .then(res => {
+                this.setState({ isLoading: false })
+                console.log(res);
+                if (!res.err) {
+                    this.props.navigation.navigate("login")
+                } else {
+                    alert(res.msg)
+                }
+            }).catch(error => { console.log(error); })
     }
     onChangeText(val, key) {
         this.setState({ [key]: val })
     }
     render() {
-        const { isPasswordView } = this.state
+        const { isPasswordView, isLoading } = this.state
         return (
             <Container>
                 <Header />
@@ -47,18 +51,19 @@ export default class ResetPassword extends Component {
                     <Text style={styles.textHeading}>Reset <Text style={{ color: PRIMARY_COLOR }}>Password</Text></Text>
                     <Text style={styles.textSubParagraph}>Create new password</Text>
                     <View style={styles.textInputContainer}>
-                        <TextInput placeholder='Enter New Password' style={styles.textInput} 
-                        onChangeText={(val) => this.onChangeText(val, 'password')}/>
+                        <TextInput placeholder='Enter New Password' style={styles.textInput}
+                            onChangeText={(val) => this.onChangeText(val, 'password')} />
                     </View>
                     <View style={styles.textInputContainer}>
-                        <TextInput placeholder='Confirm Password' secureTextEntry={!isPasswordView} style={styles.textInput} 
-                        onChangeText={(val) => this.onChangeText(val, 'confirmPassword')}/>
+                        <TextInput placeholder='Confirm Password' secureTextEntry={!isPasswordView} style={styles.textInput}
+                            onChangeText={(val) => this.onChangeText(val, 'confirmPassword')} />
                         <Icon name={isPasswordView ? 'eye' : 'eye-off'} color='rgba(0,0,0,0.3)' size={25} onPress={this.handlePasswordState} />
                     </View>
                     <View style={{ paddingVertical: 10 }}>
                         <Button
                             title='Submit'
                             onPress={() => this.resetPassword()}
+                            isLoading={isLoading}
                         />
                     </View>
                 </KeyboardAvoidingScrollView>

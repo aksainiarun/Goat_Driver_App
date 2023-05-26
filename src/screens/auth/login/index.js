@@ -18,33 +18,36 @@ class Login extends Component {
         super(props);
         this.state = {
             isPasswordView: false,
-            email:'',
-            password:''
+            email: '',
+            password: '',
+            isLoading: false,
         }
     }
     handlePasswordState = () => {
         this.setState({ isPasswordView: !this.state.isPasswordView })
     }
-    login(){
-        let {email,password}=this.state
-        if(!email && !password){return}
-        let body={email,password}
-        postWithBody('driver/login',JSON.stringify(body))
-        .then(res=>{
-            if(!res.err){
-                var decoded = jwt_decode(res.token);
-                console.log(decoded);
-                this.props.login({_id:decoded._id,email})
-            }else{
-                alert(res.msg)
-            }
-        }).catch(error=>{console.log(error);})
+    login() {
+        let { email, password } = this.state
+        if (!email && !password) { return }
+        this.setState({ isLoading: true });
+        let body = { email, password }
+        postWithBody('driver/login', JSON.stringify(body))
+            .then(res => {
+                this.setState({ isLoading: false });
+                if (!res.err) {
+                    var decoded = jwt_decode(res.token);
+                    console.log(decoded);
+                    this.props.login({ _id: decoded._id, email })
+                } else {
+                    alert(res.msg)
+                }
+            }).catch(error => { console.log(error); })
     }
     onChangeText(val, key) {
         this.setState({ [key]: val })
     }
     render() {
-        const { isPasswordView } = this.state
+        const { isPasswordView, isLoading } = this.state
         return (
             <Container>
                 <KeyboardAvoidingScrollView contentOffset={{ x: 0, y: 15 }} contentContainerStyle={{ flexGrow: 1 }}
@@ -61,12 +64,12 @@ class Login extends Component {
                     </View>
                     <View style={styles.formContainer}>
                         <View style={styles.textInputContainer}>
-                            <TextInput placeholder='Enter email address' style={styles.textInput} keyboardType={'email-address' }
-                            onChangeText={(val) => this.onChangeText(val, 'email')} />
+                            <TextInput placeholder='Enter email address' style={styles.textInput} keyboardType={'email-address'}
+                                onChangeText={(val) => this.onChangeText(val, 'email')} />
                         </View>
                         <View style={[styles.textInputContainer, { marginBottom: 8 }]}>
-                            <TextInput placeholder='Enter password' secureTextEntry={!isPasswordView} style={styles.textInput} 
-                            onChangeText={(val) => this.onChangeText(val, 'password')}/>
+                            <TextInput placeholder='Enter password' secureTextEntry={!isPasswordView} style={styles.textInput}
+                                onChangeText={(val) => this.onChangeText(val, 'password')} />
                             <Icon name={isPasswordView ? 'eye' : 'eye-off'} color='rgba(0,0,0,0.3)' size={25} onPress={this.handlePasswordState} />
                         </View>
                         <View style={{ marginBottom: 30 }}>
@@ -76,6 +79,7 @@ class Login extends Component {
                             <Button
                                 title='Login'
                                 onPress={() => this.login()}
+                                isLoading={isLoading}
                             />
                         </View>
                     </View>
@@ -86,15 +90,15 @@ class Login extends Component {
 }
 const mapStateToProps = state => {
     return {
-      state: state.AuthReducer,
+        state: state.AuthReducer,
     };
-  };
-  const mapDispatchToProps = dispatch => {
+};
+const mapDispatchToProps = dispatch => {
     return {
-        login: (data) => dispatch({ type: 'SIGNIN', payload: data },dispatch(getByDriverId(data._id)),dispatch(getAllOrders(data._id))),
+        login: (data) => dispatch({ type: 'SIGNIN', payload: data }, dispatch(getByDriverId(data._id)), dispatch(getAllOrders(data._id))),
     };
-  };
-  export default connect(mapStateToProps, mapDispatchToProps)(Login)
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
 const styles = StyleSheet.create({
     textHeading: {
         fontSize: 25,

@@ -12,25 +12,30 @@ export default class ForgotPassword extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email:'',
+            email: '',
+            isLoading: false,
         }
     }
     onChangeText(val, key) {
         this.setState({ [key]: val })
     }
-    sendOTP(){
-        const {email}=this.state
-        if(!email){return}
-        postWithBody('driver/forgotPassword',JSON.stringify({email}))
-        .then(res=>{
-            if(!res.err){
-                this.props.navigation.navigate("verify-otp",{email})
-            }else{
-                alert(res.msg)
-            }
-        }).catch(error=>{console.log(error);})
+    sendOTP() {
+        const { email } = this.state
+        if (!email) { return }
+        this.setState({ isLoading: true })
+        postWithBody('driver/forgotPassword', JSON.stringify({ email }))
+            .then(res => {
+                this.setState({ isLoading: false })
+                if (!res.err) {
+                    this.props.navigation.navigate("verify-otp", { email })
+                    console.log(res);
+                } else {
+                    alert(res.msg)
+                }
+            }).catch(error => { console.log(error); })
     }
     render() {
+        const { isLoading } = this.state
         return (
             <Container>
                 <Header />
@@ -38,13 +43,14 @@ export default class ForgotPassword extends Component {
                     <Text style={styles.textHeading}>Forgot <Text style={{ color: PRIMARY_COLOR }}>Password</Text></Text>
                     <Text style={styles.textSubParagraph}>Enter your email id</Text>
                     <View style={styles.textInputContainer}>
-                        <TextInput placeholder='Enter email address' style={styles.textInput} 
-                        onChangeText={(val) => this.onChangeText(val, 'email')}/>
+                        <TextInput placeholder='Enter email address' style={styles.textInput}
+                            onChangeText={(val) => this.onChangeText(val, 'email')} />
                     </View>
                     <View style={{ paddingVertical: 10 }}>
                         <Button
                             title='Submit'
                             onPress={() => this.sendOTP()}
+                            isLoading={isLoading}
                         />
                     </View>
                 </KeyboardAvoidingScrollView>

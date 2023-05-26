@@ -19,11 +19,11 @@ class EditProfile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: this.props.data.firstName?this.props.data.firstName:'',
-            lastName: this.props.data.lastName?this.props.data.lastName:'',
-            contact: this.props.data.contact?this.props.data.contact:'',
-            profilePhoto: this.props.data.profilePhoto?this.props.data.profilePhoto:'',
-
+            firstName: this.props.data.firstName ? this.props.data.firstName : '',
+            lastName: this.props.data.lastName ? this.props.data.lastName : '',
+            contact: this.props.data.contact ? this.props.data.contact : '',
+            profilePhoto: this.props.data.profilePhoto ? this.props.data.profilePhoto : '',
+            isLoading: false,
         }
     }
 
@@ -36,14 +36,15 @@ class EditProfile extends Component {
         });
     };
     async updateProfile() {
+        this.setState({ isLoading: true })
         const body = new FormData();
         await GetLocation.getCurrentPosition({
             enableHighAccuracy: true,
             timeout: 15000,
-          }).then(location=>{
-            body.append('longitude',location.latitude);
-            body.append('latitude',location.longitude);
-        }).catch(error=>{console.log(error);})
+        }).then(location => {
+            body.append('longitude', location.latitude);
+            body.append('latitude', location.longitude);
+        }).catch(error => { console.log(error); })
         body.append('profilePhoto', {
             uri: this.state.profilePhoto,
             name: this.props.data._id,
@@ -52,20 +53,21 @@ class EditProfile extends Component {
         body.append('firstName', this.state.firstName);
         body.append('lastName', this.state.lastName);
         body.append('contact', this.state.contact);
-        body.append('driverId',this.props.data._id);
-        body.append('address',"address");
+        body.append('driverId', this.props.data._id);
+        body.append('address', "address");
         console.log(body);
-        putRequestWithBody('driver/update',body)
-        .then(res=>{
-            if(!res.err){
-                this.props.getProfile(this.props.data._id)
-            }else{
-                alert(res.msg)
-            }
-        }).catch(err=>{console.log(err);})
+        putRequestWithBody('driver/update', body)
+            .then(res => {
+                this.setState({ isLoading: false })
+                if (!res.err) {
+                    this.props.getProfile(this.props.data._id)
+                } else {
+                    alert(res.msg)
+                }
+            }).catch(err => { console.log(err); })
     }
     render() {
-        const { firstName, lastName, contact, profilePhoto } = this.state
+        const { firstName, lastName, contact, profilePhoto, isLoading } = this.state
         const { data } = this.props
         return (
             <Container>
@@ -93,7 +95,7 @@ class EditProfile extends Component {
                             <TextInput placeholder='example@gmail.com' value={data.email} editable={false} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR} />
                         </View>
                         <View style={styles.inputContainer}>
-                            <TextInput placeholder='Goat Id' value={'GOAT'+data.displayId} editable={false} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR} />
+                            <TextInput placeholder='Goat Id' value={'GOAT' + data.displayId} editable={false} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR} />
                         </View>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={[styles.inputContainer, { width: 60, marginRight: 12, paddingHorizontal: 5, }]}>
@@ -102,7 +104,7 @@ class EditProfile extends Component {
                             </View>
                             <View style={[styles.inputContainer, { flex: 1 }]}>
                                 <TextInput placeholder='Phone no' value={contact} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR}
-                                maxLength={10}
+                                    maxLength={10}
                                     onChangeText={(val) => this.onChangeText(val, 'contact')} />
                             </View>
                         </View>
@@ -115,6 +117,7 @@ class EditProfile extends Component {
                     <Button
                         title='Save'
                         onPress={() => this.updateProfile()}
+                        isLoading={isLoading}
                     />
                 </View>
             </Container>
