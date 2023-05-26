@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.goat_driver_app"
+    namespace "com.goatdelivery"
     defaultConfig {
-        applicationId "com.goat_driver_app"
+        applicationId "com.goatdelivery"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 2

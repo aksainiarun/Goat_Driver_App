@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface Goat_Driver_AppTests : XCTestCase
+@interface TheGoatDeliveryTests : XCTestCase
 
 @end
 
-@implementation Goat_Driver_AppTests
+@implementation TheGoatDeliveryTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
