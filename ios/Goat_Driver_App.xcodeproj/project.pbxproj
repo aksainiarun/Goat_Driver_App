@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* TheGoatDeliveryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TheGoatDeliveryTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-TheGoatDelivery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-TheGoatDelivery.a */; };
+		00E356F31AD99517003FC87E /* Goat_Driver_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* Goat_Driver_AppTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-Goat_Driver_App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Goat_Driver_App.a */; };
 		10F92CAC4F0B49DE8A3EA0F5 /* Heebo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09322DFFD79F4D659C2213A0 /* Heebo-SemiBold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -22,7 +22,7 @@
 		5382147222DF4C7599F6FB47 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1838B8D1B5B143B487B5E303 /* Lato-Light.ttf */; };
 		5A4A24BE863E4EEE944DA52F /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA67A09A378144F897D5E014 /* Lato-Regular.ttf */; };
 		5D5DF464033A45FD8F3A87EF /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FC36F5DC740649925A3C0 /* Poppins-Light.ttf */; };
-		7699B88040F8A987B510C191 /* libPods-TheGoatDelivery-TheGoatDeliveryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TheGoatDelivery-TheGoatDeliveryTests.a */; };
+		7699B88040F8A987B510C191 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a */; };
 		799F19155EA3404BAAA14126 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55B0F2F884A74B17870694B4 /* Lato-Bold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8A5431B942FE467FB3069E49 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C386CF66A12E45A480EF71CC /* Heebo-Regular.ttf */; };
@@ -38,34 +38,34 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = TheGoatDelivery;
+			remoteInfo = Goat_Driver_App;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* TheGoatDeliveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheGoatDeliveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* Goat_Driver_AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Goat_Driver_AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* TheGoatDeliveryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheGoatDeliveryTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* Goat_Driver_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Goat_Driver_AppTests.m; sourceTree = "<group>"; };
 		09322DFFD79F4D659C2213A0 /* Heebo-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-SemiBold.ttf"; path = "../src/assets/fonts/Heebo-SemiBold.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* TheGoatDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGoatDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TheGoatDelivery/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = TheGoatDelivery/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TheGoatDelivery/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TheGoatDelivery/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TheGoatDelivery/main.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Goat_Driver_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goat_Driver_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Goat_Driver_App/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Goat_Driver_App/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Goat_Driver_App/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Goat_Driver_App/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Goat_Driver_App/main.m; sourceTree = "<group>"; };
 		1725D3B691404570811C9C73 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		1838B8D1B5B143B487B5E303 /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../src/assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-TheGoatDelivery-TheGoatDeliveryTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheGoatDelivery-TheGoatDeliveryTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Goat_Driver_App-Goat_Driver_AppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA453347DCA4F9898B1B771 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-TheGoatDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGoatDelivery.debug.xcconfig"; path = "Target Support Files/Pods-TheGoatDelivery/Pods-TheGoatDelivery.debug.xcconfig"; sourceTree = "<group>"; };
+		3B4392A12AC88292D35C810B /* Pods-Goat_Driver_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goat_Driver_App.debug.xcconfig"; path = "Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App.debug.xcconfig"; sourceTree = "<group>"; };
 		55B0F2F884A74B17870694B4 /* Lato-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Bold.ttf"; path = "../src/assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-TheGoatDelivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGoatDelivery.release.xcconfig"; path = "Target Support Files/Pods-TheGoatDelivery/Pods-TheGoatDelivery.release.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-Goat_Driver_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goat_Driver_App.release.xcconfig"; path = "Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App.release.xcconfig"; sourceTree = "<group>"; };
 		571C63C4FB5A47F3B24EA1F4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-TheGoatDelivery-TheGoatDeliveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGoatDelivery-TheGoatDeliveryTests.debug.xcconfig"; path = "Target Support Files/Pods-TheGoatDelivery-TheGoatDeliveryTests/Pods-TheGoatDelivery-TheGoatDeliveryTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-TheGoatDelivery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheGoatDelivery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B7EB9410499542E8C5724F5 /* Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-Goat_Driver_App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Goat_Driver_App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		680F4812714D423790BC3A35 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TheGoatDelivery/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-TheGoatDelivery-TheGoatDeliveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGoatDelivery-TheGoatDeliveryTests.release.xcconfig"; path = "Target Support Files/Pods-TheGoatDelivery-TheGoatDeliveryTests/Pods-TheGoatDelivery-TheGoatDeliveryTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Goat_Driver_App/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig"; path = "Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		8EB69B2105CC4220BAA526C1 /* Heebo-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Medium.ttf"; path = "../src/assets/fonts/Heebo-Medium.ttf"; sourceTree = "<group>"; };
 		9D1FC36F5DC740649925A3C0 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
 		BCCAB9508E704D33A9955098 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-TheGoatDelivery-TheGoatDeliveryTests.a in Frameworks */,
+				7699B88040F8A987B510C191 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,20 +91,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-TheGoatDelivery.a in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-Goat_Driver_App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* TheGoatDeliveryTests */ = {
+		00E356EF1AD99517003FC87E /* Goat_Driver_AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* TheGoatDeliveryTests.m */,
+				00E356F21AD99517003FC87E /* Goat_Driver_AppTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = TheGoatDeliveryTests;
+			path = Goat_Driver_AppTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -115,7 +115,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* TheGoatDelivery */ = {
+		13B07FAE1A68108700A75B9A /* Goat_Driver_App */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -125,15 +125,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = TheGoatDelivery;
+			name = Goat_Driver_App;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-TheGoatDelivery.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-TheGoatDelivery-TheGoatDeliveryTests.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-Goat_Driver_App.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Goat_Driver_App-Goat_Driver_AppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,9 +148,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* TheGoatDelivery */,
+				13B07FAE1A68108700A75B9A /* Goat_Driver_App */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* TheGoatDeliveryTests */,
+				00E356EF1AD99517003FC87E /* Goat_Driver_AppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -164,8 +164,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* TheGoatDelivery.app */,
-				00E356EE1AD99517003FC87E /* TheGoatDeliveryTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Goat_Driver_App.app */,
+				00E356EE1AD99517003FC87E /* Goat_Driver_AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,10 +197,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-TheGoatDelivery.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-TheGoatDelivery.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-TheGoatDelivery-TheGoatDeliveryTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-TheGoatDelivery-TheGoatDeliveryTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-Goat_Driver_App.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-Goat_Driver_App.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -208,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* TheGoatDeliveryTests */ = {
+		00E356ED1AD99517003FC87E /* Goat_Driver_AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TheGoatDeliveryTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Goat_Driver_AppTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -224,14 +224,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = TheGoatDeliveryTests;
-			productName = TheGoatDeliveryTests;
-			productReference = 00E356EE1AD99517003FC87E /* TheGoatDeliveryTests.xctest */;
+			name = Goat_Driver_AppTests;
+			productName = Goat_Driver_AppTests;
+			productReference = 00E356EE1AD99517003FC87E /* Goat_Driver_AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* TheGoatDelivery */ = {
+		13B07F861A680F5B00A75B9A /* Goat_Driver_App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TheGoatDelivery" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Goat_Driver_App" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -246,9 +246,9 @@
 			);
 			dependencies = (
 			);
-			name = TheGoatDelivery;
-			productName = TheGoatDelivery;
-			productReference = 13B07F961A680F5B00A75B9A /* TheGoatDelivery.app */;
+			name = Goat_Driver_App;
+			productName = Goat_Driver_App;
+			productReference = 13B07F961A680F5B00A75B9A /* Goat_Driver_App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -268,7 +268,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TheGoatDelivery" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Goat_Driver_App" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -281,8 +281,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* TheGoatDelivery */,
-				00E356ED1AD99517003FC87E /* TheGoatDeliveryTests */,
+				13B07F861A680F5B00A75B9A /* Goat_Driver_App */,
+				00E356ED1AD99517003FC87E /* Goat_Driver_AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,15 +345,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery/Pods-TheGoatDelivery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery/Pods-TheGoatDelivery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery/Pods-TheGoatDelivery-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -371,7 +371,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TheGoatDelivery-TheGoatDeliveryTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Goat_Driver_App-Goat_Driver_AppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -393,7 +393,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TheGoatDelivery-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Goat_Driver_App-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -406,15 +406,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery-TheGoatDeliveryTests/Pods-TheGoatDelivery-TheGoatDeliveryTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery-TheGoatDeliveryTests/Pods-TheGoatDelivery-TheGoatDeliveryTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery-TheGoatDeliveryTests/Pods-TheGoatDelivery-TheGoatDeliveryTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -423,15 +423,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery/Pods-TheGoatDelivery-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery/Pods-TheGoatDelivery-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery/Pods-TheGoatDelivery-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App/Pods-Goat_Driver_App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -440,15 +440,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery-TheGoatDeliveryTests/Pods-TheGoatDelivery-TheGoatDeliveryTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery-TheGoatDeliveryTests/Pods-TheGoatDelivery-TheGoatDeliveryTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheGoatDelivery-TheGoatDeliveryTests/Pods-TheGoatDelivery-TheGoatDeliveryTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Goat_Driver_App-Goat_Driver_AppTests/Pods-Goat_Driver_App-Goat_Driver_AppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -477,7 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* TheGoatDeliveryTests.m in Sources */,
+				00E356F31AD99517003FC87E /* Goat_Driver_AppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +495,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* TheGoatDelivery */;
+			target = 13B07F861A680F5B00A75B9A /* Goat_Driver_App */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -503,14 +503,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-TheGoatDelivery-TheGoatDeliveryTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Goat_Driver_App-Goat_Driver_AppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TheGoatDeliveryTests/Info.plist;
+				INFOPLIST_FILE = Goat_Driver_AppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,17 +524,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheGoatDelivery.app/TheGoatDelivery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goat_Driver_App.app/Goat_Driver_App";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-TheGoatDelivery-TheGoatDeliveryTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-Goat_Driver_App-Goat_Driver_AppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = TheGoatDeliveryTests/Info.plist;
+				INFOPLIST_FILE = Goat_Driver_AppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,19 +548,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheGoatDelivery.app/TheGoatDelivery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goat_Driver_App.app/Goat_Driver_App";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-TheGoatDelivery.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-Goat_Driver_App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = TheGoatDelivery/Info.plist;
+				INFOPLIST_FILE = Goat_Driver_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,7 +572,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = TheGoatDelivery;
+				PRODUCT_NAME = Goat_Driver_App;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -581,12 +581,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-TheGoatDelivery.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-Goat_Driver_App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = TheGoatDelivery/Info.plist;
+				INFOPLIST_FILE = Goat_Driver_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,7 +598,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = TheGoatDelivery;
+				PRODUCT_NAME = Goat_Driver_App;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -744,7 +744,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TheGoatDeliveryTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "Goat_Driver_AppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -753,7 +753,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TheGoatDelivery" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Goat_Driver_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -762,7 +762,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TheGoatDelivery" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Goat_Driver_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

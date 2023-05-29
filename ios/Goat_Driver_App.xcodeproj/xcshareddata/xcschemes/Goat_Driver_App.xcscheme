@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "TheGoatDelivery.app"
-               BlueprintName = "TheGoatDelivery"
-               ReferencedContainer = "container:TheGoatDelivery.xcodeproj">
+               BuildableName = "Goat_Driver_App.app"
+               BlueprintName = "Goat_Driver_App"
+               ReferencedContainer = "container:Goat_Driver_App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "TheGoatDeliveryTests.xctest"
-               BlueprintName = "TheGoatDeliveryTests"
-               ReferencedContainer = "container:TheGoatDelivery.xcodeproj">
+               BuildableName = "Goat_Driver_AppTests.xctest"
+               BlueprintName = "Goat_Driver_AppTests"
+               ReferencedContainer = "container:Goat_Driver_App.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "TheGoatDelivery.app"
-            BlueprintName = "TheGoatDelivery"
-            ReferencedContainer = "container:TheGoatDelivery.xcodeproj">
+            BuildableName = "Goat_Driver_App.app"
+            BlueprintName = "Goat_Driver_App"
+            ReferencedContainer = "container:Goat_Driver_App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "TheGoatDelivery.app"
-            BlueprintName = "TheGoatDelivery"
-            ReferencedContainer = "container:TheGoatDelivery.xcodeproj">
+            BuildableName = "Goat_Driver_App.app"
+            BlueprintName = "Goat_Driver_App"
+            ReferencedContainer = "container:Goat_Driver_App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

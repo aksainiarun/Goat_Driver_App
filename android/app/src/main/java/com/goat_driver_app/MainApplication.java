@@ -1,4 +1,4 @@
-package com.goatdelivery;
+package com.goat_driver_app;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

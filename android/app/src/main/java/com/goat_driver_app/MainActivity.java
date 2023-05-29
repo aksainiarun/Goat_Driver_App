@@ -1,4 +1,4 @@
-package com.goatdelivery;
+package com.goat_driver_app;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -15,7 +15,7 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     SplashScreen.show(this); 
-    return "TheGoatDelivery";
+    return "Goat_Driver_App";
   }
 
   /**

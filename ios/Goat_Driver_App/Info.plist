@@ -7,11 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-<<<<<<< Updated upstream:ios/TheGoatDelivery/Info.plist
-	<string>The Goat Delivery</string>
-=======
-	<string>The GOAT Delivery Partner</string>
->>>>>>> Stashed changes:ios/Goat_Driver_App/Info.plist
+	<string>Goat_Driver_App</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

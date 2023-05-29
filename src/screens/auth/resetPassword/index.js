@@ -26,8 +26,8 @@ export default class ResetPassword extends Component {
         const { email, OTP } = this.props.route.params
         let { password, confirmPassword } = this.state
         if (!password || password != confirmPassword) { return }
-        let body = { email, password, OTP }
         this.setState({ isLoading: true })
+        let body = { email, password, OTP }
         postWithBody('driver/resetPassword', JSON.stringify(body))
             .then(res => {
                 this.setState({ isLoading: false })

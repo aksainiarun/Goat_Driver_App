@@ -21,7 +21,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'TheGoatDelivery' do
+target 'Goat_Driver_App' do
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -43,7 +43,7 @@ target 'TheGoatDelivery' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'TheGoatDeliveryTests' do
+  target 'Goat_Driver_AppTests' do
     inherit! :complete
     # Pods for testing
   end

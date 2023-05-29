@@ -11,10 +11,10 @@ export default class VerifyOtp extends Component {
     constructor() {
         super();
     }
-    validateOTP(OTP) {
-        const { email } = this.props.route.params
-        if (!email || !OTP) { return }
-        this.props.navigation.navigate("reset-password", { email, OTP })
+    validateOTP(OTP){
+        const {email}=this.props.route.params
+        if(!email || !OTP){return}
+        this.props.navigation.navigate("reset-password",{email,OTP})
     }
     render() {
         return (
@@ -22,12 +22,12 @@ export default class VerifyOtp extends Component {
                 <Header />
                 <KeyboardAvoidingScrollView style={styles.container}>
                     <Text style={styles.textHeading}>Enter <Text style={{ color: PRIMARY_COLOR }}>OTP</Text></Text>
-                    <Text style={styles.textSubParagraph}>A verification codes has been sent to{'\n' + this.props.route.params.email}</Text>
+                    <Text style={styles.textSubParagraph}>A verification codes has been sent to{'\n'+this.props.route.params.email}</Text>
 
                     <OTPInputView
                         style={{ width: '100%', height: 45, marginBottom: 40, marginTop: 20 }}
                         pinCount={4}
-                        onCodeChanged={code => { this.setState({ code: code }) }}
+                        onCodeChanged={code => { this.setState({ code: code }) }}                        
                         autoFocusOnLoad
                         codeInputFieldStyle={styles.textInputContainer}
                         codeInputHighlightStyle={styles.underlineStyleHighLighted}
@@ -38,7 +38,7 @@ export default class VerifyOtp extends Component {
                             this.validateOTP(code)
                         })}
                     />
-
+                    
                     <View style={{ paddingVertical: 10 }}>
                         <Button
                             title='Submit'
