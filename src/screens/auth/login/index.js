@@ -29,8 +29,8 @@ class Login extends Component {
     login() {
         let { email, password } = this.state
         if (!email && !password) { return }
-        this.setState({ isLoading: true });
         let body = { email, password }
+        this.setState({ isLoading: true });
         postWithBody('driver/login', JSON.stringify(body))
             .then(res => {
                 this.setState({ isLoading: false });

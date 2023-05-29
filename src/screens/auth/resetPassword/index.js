@@ -31,7 +31,6 @@ export default class ResetPassword extends Component {
         postWithBody('driver/resetPassword', JSON.stringify(body))
             .then(res => {
                 this.setState({ isLoading: false })
-                console.log(res);
                 if (!res.err) {
                     this.props.navigation.navigate("login")
                 } else {

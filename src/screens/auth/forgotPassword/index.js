@@ -28,7 +28,6 @@ export default class ForgotPassword extends Component {
                 this.setState({ isLoading: false })
                 if (!res.err) {
                     this.props.navigation.navigate("verify-otp", { email })
-                    console.log(res);
                 } else {
                     alert(res.msg)
                 }
