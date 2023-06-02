@@ -36,7 +36,6 @@ class EditProfile extends Component {
         });
     };
     async updateProfile() {
-        this.setState({ isLoading: true })
         const body = new FormData();
         await GetLocation.getCurrentPosition({
             enableHighAccuracy: true,
@@ -56,6 +55,7 @@ class EditProfile extends Component {
         body.append('driverId', this.props.data._id);
         body.append('address', "address");
         console.log(body);
+        this.setState({ isLoading: true })
         putRequestWithBody('driver/update', body)
             .then(res => {
                 this.setState({ isLoading: false })
@@ -64,7 +64,7 @@ class EditProfile extends Component {
                 } else {
                     alert(res.msg)
                 }
-            }).catch(err => { console.log(err); })
+            }).catch(err => { console.log(err); alert(err.msg); this.setState({ isLoading: false });})
     }
     render() {
         const { firstName, lastName, contact, profilePhoto, isLoading } = this.state
@@ -105,6 +105,7 @@ class EditProfile extends Component {
                             <View style={[styles.inputContainer, { flex: 1 }]}>
                                 <TextInput placeholder='Phone no' value={contact} style={[styles.textInput, { color: "#585858" }]} placeholderTextColor={PLACEHOLDER_COLOR}
                                     maxLength={10}
+                                    keyboardType='numeric'
                                     onChangeText={(val) => this.onChangeText(val, 'contact')} />
                             </View>
                         </View>

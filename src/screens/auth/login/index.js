@@ -27,7 +27,6 @@ class Login extends Component {
         this.setState({ isPasswordView: !this.state.isPasswordView })
     }
     login() {
-        console.log(this.state.isLoading, "absadsjdhjh");
         let { email, password } = this.state
         if (!email && !password) { return }
         let body = { email, password }

@@ -28,8 +28,8 @@ class ChangePassword extends Component {
         this.setState({ [key]: val })
     }
     changePassword() {
-        if (this.state.confirmPassword != this.state.password) { alert('Password does not matched.') }
-        if (!this.state.password) { alert('Enter password should not be empty.') }
+        if (this.state.confirmPassword != this.state.password) { alert('Password does not matched.'); return}
+        if (!this.state.password) { alert('New password should not be empty.') }
         let body = {
             "driverId": this.props.data._id,
             "oldPassword": this.state.oldPassword,
