@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, Image } from 'react-native'
+import { Text, StyleSheet, View, Image, Linking } from 'react-native'
 import React, { Component } from 'react'
 import Container from '../../components/layout/Container'
 import { AVATAR } from '../../utils/images'
@@ -24,6 +24,7 @@ class Profile extends Component {
         super(props);
         this.state = {
             isLogout: false,
+            phoneNumber:'9898989898',
         }
     }
     handleLogoutConfirm = () => {
@@ -34,7 +35,7 @@ class Profile extends Component {
         this.props.logout()
     }
     render() {
-        const { isLogout } = this.state
+        const { isLogout, phoneNumber } = this.state
         const {data}=this.props
         return (
             <Container>
@@ -55,7 +56,7 @@ class Profile extends Component {
                 <View style={{}}>
                     <ListItem title={"Edit Profile"} iconName={"pencil-sharp"} iconColor={"#236CD9"} onPress={() => this.props.navigation.navigate("edit-profile")} />
                     <ListItem title={"My Orders"} iconName={"briefcase"} iconColor={"rgba(55, 71, 79, 1)"} onPress={() => this.props.navigation.navigate("my-orders")} />
-                    <ListItem title={"Talk to our Support"} iconName={"call-sharp"} iconColor={"rgba(243, 122, 32, 1)"} />
+                    <ListItem title={"Talk to our Support"} iconName={"call-sharp"} iconColor={"rgba(243, 122, 32, 1)"} onPress={()=>Linking.openURL(`tel:${phoneNumber}`)}/>
                     <ListItem title={"Log out"} iconName={"log-out"} iconColor={"rgba(255, 85, 82, 1)"} onPress={this.handleLogoutConfirm} />
                 </View>
                 <ConfirmModal visible={isLogout} onPressCancel={this.handleLogoutConfirm} onPress={this.handleLogout} content={"Are you sure you want to logout"} heading={"Logging Out"} buttonTitle="Logout" />
