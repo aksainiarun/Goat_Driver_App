@@ -11,6 +11,7 @@ import { PRIMARY_COLOR } from '../../utils/colors'
 import Notification from './Notification'
 import { connect } from 'react-redux'
 import { getAllOrders } from '../../actions/thunkActions'
+import MapView, { Marker } from 'react-native-maps';
 
 
 const RenderTabs = ({ data, onPress, isSelected }) => {
@@ -129,7 +130,21 @@ class Home extends Component {
                     snapToOffsets={[SCREEN_HEIGHT * 0.4, (SCREEN_HEIGHT / 1.1) + 65, 0]}
                 >
                     <View>
-                        <Image source={{ uri: `https://img.freepik.com/premium-vector/city-map-any-kind-digital-info-graphics-print-publication-gps-map_403715-37.jpg?h=1000` }} style={{ height: SCREEN_HEIGHT, width: SCREEN_WIDTH }} />
+                    <MapView
+                        style={{ height: SCREEN_HEIGHT, width: SCREEN_WIDTH }}
+                        initialRegion={{
+                            latitude: 37.78825,
+                            longitude: -122.4324,
+                            latitudeDelta: 0.0922,
+                            longitudeDelta: 0.0421,
+                        }}>
+                        <Marker
+                            coordinate={{ latitude: 37.78825, longitude: -122.4324 }}
+                            title="Marker Title"
+                            description="Marker Description"
+                        />
+                    </MapView>
+                        {/* <Image source={{ uri: `https://img.freepik.com/premium-vector/city-map-any-kind-digital-info-graphics-print-publication-gps-map_403715-37.jpg?h=1000` }} style={{ height: SCREEN_HEIGHT, width: SCREEN_WIDTH }} /> */}
                     </View>
                     <View style={{ zIndex: 99, backgroundColor: BACKGROUND_COLOR, borderTopRightRadius: 25, borderTopLeftRadius: 25 }}>
                         <View style={{ paddingHorizontal: 14, paddingVertical: 14, marginBottom: 14 }}>
