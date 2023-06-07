@@ -64,7 +64,7 @@ class EditProfile extends Component {
                 } else {
                     alert(res.msg)
                 }
-            }).catch(err => { console.log(err); alert(err.msg); this.setState({ isLoading: false });})
+            }).catch(err => { console.log(err); alert(err.msg); this.setState({ isLoading: false }); })
     }
     render() {
         const { firstName, lastName, contact, profilePhoto, isLoading } = this.state
@@ -110,7 +110,7 @@ class EditProfile extends Component {
                             </View>
                         </View>
                         <TouchableRipple onPress={() => this.props.navigation.navigate("change-password")} style={[styles.inputContainer, { justifyContent: 'center' }]}>
-                            <Text style={[styles.textInput, { fontSize: 16 }]}>Change Password</Text>
+                            <Text style={[styles.textInput, { fontSize: 16, height: null }]}>Change Password</Text>
                         </TouchableRipple>
                     </View>
                 </KeyboardAvoidingScrollView>
@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
         fontFamily: Font_Heebo_Regular,
         color: "#000",
         fontSize: 14,
+        height: 54
 
     },
     imageContainer: {

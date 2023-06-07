@@ -64,7 +64,9 @@ class Login extends Component {
                     </View>
                     <View style={styles.formContainer}>
                         <View style={styles.textInputContainer}>
-                            <TextInput placeholder='Enter email address' style={styles.textInput} keyboardType={'email-address'}
+                            <TextInput placeholder='Enter email address' style={styles.textInput}
+                                keyboardType={'email-address'}
+                                autoCapitalize='none'
                                 onChangeText={(val) => this.onChangeText(val, 'email')} />
                         </View>
                         <View style={[styles.textInputContainer, { marginBottom: 8 }]}>

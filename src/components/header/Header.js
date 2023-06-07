@@ -18,9 +18,9 @@ export default function Header({ rightSide, headerTitle, goHome }) {
     const navigation = useNavigation()
     return (
         <View style={styles.container}>
-            <View style={{}}>
-                <Icon name='arrow-back' onPress={() => goHome ? navigation.navigate("home") : navigation.goBack()} color='#000' size={25} style={{ width: 35, height: 35, textAlign: "center", textAlignVertical: 'center', backgroundColor: PRIMARY_LIGHT_COLOR, borderRadius: 40 }} />
-            </View>
+            <TouchableRipple onPress={() => goHome ? navigation.navigate("home") : navigation.goBack()} style={{ width: 35, height: 35, justifyContent: "center", alignItems: 'center', backgroundColor: PRIMARY_LIGHT_COLOR, borderRadius: 40 }}>
+                <Icon name='arrow-back' color='#000' size={25} />
+            </TouchableRipple>
             <View style={{ flex: 1 }}>
                 <Text style={{ fontSize: 22, fontFamily: Font_Lato_Bold, color: "#000", marginLeft: 14, lineHeight: 23 }}>{headerTitle}</Text>
             </View>
