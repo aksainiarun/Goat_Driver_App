@@ -15,6 +15,7 @@ import ProgressStrip from '../../components/progress/ProgressStrip'
 import { postWithBody } from '../../utils/appUtil/ApiHelper';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllOrders } from '../../actions/thunkActions';
+import SelectDropdown from 'react-native-select-dropdown';
 
 const origin = { latitude: 37.3318456, longitude: -122.0296002 };
 const destination = { latitude: 37.771707, longitude: -122.4053769 };
@@ -128,7 +129,19 @@ export default function OrderDetail({ route }) {
                 <View style={[styles.shipperCard]} onLayout={(e) => handleFreeSpace(e.nativeEvent.layout.height)}>
                     <View style={styles.divider} />
                     <View style={styles.cardHeader}>
-                        <Text style={{ fontSize: 14, fontFamily: Font_Heebo_SemiBold, color: CHARCOAL_COLOR }}>Order Status</Text>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                            <Text style={{ fontSize: 14, fontFamily: Font_Heebo_SemiBold, color: CHARCOAL_COLOR }}>Order Status</Text>
+                            <SelectDropdown
+                                data={['Received', 'Confirm', 'Shipped', 'Delivered']}
+                                defaultButtonText='Change Status'
+                                buttonStyle={{ paddingHorizontal: 8, marginHorizontal: 0, width: 120, height: 30, borderRadius: 30 }}
+                                buttonTextStyle={{ fontSize: 12, fontFamily: Font_Heebo_SemiBold, color: "#000", marginHorizontal: 8, flex: 0 }}
+                                dropdownIconPosition='right'
+                                renderDropdownIcon={() => <Icon name='caret-down-outline' />}
+                                rowStyle={{ height: 35 }}
+                                rowTextStyle={{ fontSize: 12, fontFamily: Font_Heebo_SemiBold, color: "#000", flex: 0, textAlign: 'left' }}
+                            />
+                        </View>
                         <ProgressStrip status={orderStatus} />
                         <Text style={{ fontSize: 14, fontFamily: Font_Heebo_SemiBold, color: CHARCOAL_COLOR }}>Shipper</Text>
                     </View>
@@ -142,7 +155,7 @@ export default function OrderDetail({ route }) {
                                 </View>
                                 <Text style={{ fontSize: 12, fontFamily: Font_Heebo_Regular, color: CHARCOAL_COLOR }}>Delivery Boy</Text>
                             </View>
-                            <Icon name='ios-call-sharp' style={styles.icon} color='#fff' size={22} onPress={() => console.log("@working")} />
+                            {/* <Icon name='ios-call-sharp' style={styles.icon} color='#fff' size={22} onPress={() => console.log("@working")} /> */}
                         </View>
                         <View>
                             <View style={{ marginBottom: 12 }}>
@@ -248,7 +261,7 @@ const styles = StyleSheet.create({
         width: 35,
         height: 35,
         borderRadius: 35,
-        backgroundColor: PRIMARY_LIGHT_COLOR,
+        backgroundColor: PRIMARY_COLOR,
         justifyContent: 'center',
         alignItems: 'center',
     },
