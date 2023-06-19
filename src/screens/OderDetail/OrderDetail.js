@@ -132,7 +132,7 @@ export default function OrderDetail({ route }) {
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                             <Text style={{ fontSize: 14, fontFamily: Font_Heebo_SemiBold, color: CHARCOAL_COLOR }}>Order Status</Text>
                             <SelectDropdown
-                                data={['Received', 'Confirm', 'Shipped', 'Delivered']}
+                                data={['Delivered']}
                                 defaultButtonText='Change Status'
                                 buttonStyle={{ paddingHorizontal: 8, marginHorizontal: 0, width: 120, height: 30, borderRadius: 30 }}
                                 buttonTextStyle={{ fontSize: 12, fontFamily: Font_Heebo_SemiBold, color: "#000", marginHorizontal: 8, flex: 0 }}
