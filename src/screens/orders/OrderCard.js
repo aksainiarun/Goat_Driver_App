@@ -33,7 +33,7 @@ const CanceledBadge = () => {
  * 
  */
 
-export default function OrderCard({ orderStatus,data }) {
+export default function OrderCard({ orderStatus, data }) {
     const [isItemView, setIsItemView] = useState(false)
     const handleShowItems = () => {
         LayoutAnimation.easeInEaseOut();
@@ -48,7 +48,7 @@ export default function OrderCard({ orderStatus,data }) {
     const backgroundColor = orderStatus === 'delivered' ? "rgba(94, 180, 17, 0.1)" : orderStatus === 'canceled' ? "rgba(253, 1, 1, 0.1)" : orderStatus === 'pending' ? "rgba(253, 183, 20, 0.1)" : null
     const ORDER_STATUS = orderStatus === 'delivered' ? <DeliveredBadge /> : orderStatus === 'canceled' ? <CanceledBadge /> : orderStatus === 'pending' ? <InProgressBadge /> : null
     return (
-        <View style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('OrderDetail', { order: data })}>
             <View style={[styles.cardHeader, { backgroundColor }]}>
                 <View style={styles.flexRow}>
                     <Text style={styles.text}>Order ID: <Text style={{ fontFamily: Font_Heebo_Bold }}>{data.orderNumber}</Text></Text>
@@ -83,7 +83,7 @@ export default function OrderCard({ orderStatus,data }) {
             </View>
             <View style={{ padding: 14, borderTopColor: "rgba(200,200,200,1)", borderTopWidth: 0.5 }}>
                 {!isItemView && <TouchableOpacity onPress={handleShowItems} style={{ flexDirection: 'row', alignItems: 'center' }}>
-                {data.products.map((item,index)=>(<Image style={{ width: 40, height: 40, marginRight: 8 }} source={{ uri: item.images }} />))}
+                    {data.products.map((item, index) => (<Image style={{ width: 40, height: 40, marginRight: 8 }} source={{ uri: item.images }} />))}
                     <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
                         <Text style={{ fontSize: 14, color: "#000", fontFamily: Font_Heebo_Medium, }} numberOfLines={1} adjustsFontSizeToFit>View {data.products.length} Items</Text>
                         <Icon name='chevron-down' />
@@ -99,12 +99,12 @@ export default function OrderCard({ orderStatus,data }) {
                             <Icon name='chevron-up' />
                         </View>
                     </TouchableOpacity>
-                    {data.products.map((item,index)=>(<ProductCard data={item} key={index} />))}
+                    {data.products.map((item, index) => (<ProductCard data={item} key={index} />))}
                 </View>}
 
 
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

@@ -15,22 +15,23 @@ class OlderOrders extends Component {
         super(props);
         this.state = {
             isFilterOpen: false,
-            delivered:true,accepted:true,rejected:true
+            delivered: true, accepted: true, rejected: true
         }
     }
     handleFilterModal = () => this.setState({ isFilterOpen: !this.state.isFilterOpen })
     render() {
-        const { isFilterOpen,delivered,accepted,rejected } = this.state
+        const { isFilterOpen, delivered, accepted, rejected } = this.state
+        console.log(this.props.orders);
         return (
             <Container>
                 <Header headerTitle='My Orders' rightSide={<Icon name='filter' type='fontAwesome' size={25} style={styles.filterIcon} onPress={this.handleFilterModal} />} />
 
-                {this.props.orders.length<1 ? <OrderEmpty /> :
+                {this.props.orders.length < 1 ? <OrderEmpty /> :
                     <ScrollView>
-                        {this.props.orders.map((item, index) =>(item.status=='delivered'&&delivered || item.status=='accepted'&&accepted|| item.status=='rejected'&&rejected?<OrderCard orderStatus={item.status} data={item} key={index}/>:null))}
+                        {this.props.orders.map((item, index) => (item.status == 'delivered' && delivered || item.status == 'accepted' && accepted || item.status == 'rejected' && rejected ? <OrderCard orderStatus={item.status} data={item} key={index} /> : null))}
                     </ScrollView>}
-                <Filter isVisible={isFilterOpen} onClose={this.handleFilterModal} apply={(delivered,accepted,rejected)=>this.setState({delivered,accepted,rejected,isFilterOpen:false})}
-                clearFilter={()=>this.setState({delivered:true,accepted:true,rejected:true,isFilterOpen:false})} />
+                <Filter isVisible={isFilterOpen} onClose={this.handleFilterModal} apply={(delivered, accepted, rejected) => this.setState({ delivered, accepted, rejected, isFilterOpen: false })}
+                    clearFilter={() => this.setState({ delivered: true, accepted: true, rejected: true, isFilterOpen: false })} />
 
             </Container>
         )
@@ -39,16 +40,16 @@ class OlderOrders extends Component {
 
 const mapStateToProps = state => {
     return {
-      data: state.AuthReducer.data,
-      orders:state.AuthReducer.orders,
+        data: state.AuthReducer.data,
+        orders: state.AuthReducer.orders,
     };
-  };
-  const mapDispatchToProps = dispatch => {
+};
+const mapDispatchToProps = dispatch => {
     return {
-      getAllOrders: (id) =>dispatch(getAllOrders(id)),
-      };
-  };
-  export default connect(mapStateToProps, mapDispatchToProps)(OlderOrders)
+        getAllOrders: (id) => dispatch(getAllOrders(id)),
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(OlderOrders)
 const styles = StyleSheet.create({
     filterIcon: {
         width: 35,

@@ -47,7 +47,7 @@ class Home extends Component {
     componentDidMount() {
         this.initialScroll()
 
-        this.props.getAllOrders(this.props.data.id)
+        this.props.getAllOrders(this.props.data._id)
     }
 
 
@@ -180,6 +180,7 @@ class Home extends Component {
                                 renderItem={({ item, index }) => <RenderTabs data={item} onPress={() => this.handleTabs(item)} isSelected={item === selectedTab} />}
                             />
                         </View>
+                        {console.log(selectedTab)}
                         <View style={{ height: 500 }}>
                             {this.props.orders.map((item, index) => selectedTab == item.status || selectedTab == 'All' ? <OrderCard key={index} data={item} orderStatus={item.status} /> : null)}
                         </View>

@@ -34,7 +34,7 @@ const Item = ({ status, count, isLast, title }) => {
         </View>
     );
 };
-export default function ProgressStrip({ status1 }) {
+export default function ProgressStrip({ status }) {
     return (
         <View style={styles.progress_strip}>
             <Item
@@ -54,7 +54,7 @@ export default function ProgressStrip({ status1 }) {
             />
             <Item
                 title={'Delivered'}
-                status={""}
+                status={status == "delivered" ? "success" : ''}
                 count={'4'}
                 isLast
             />

@@ -3,42 +3,44 @@ import React, { Component } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { ForgotPassword, Login, ResetPassword, VerifyOtp, Home, Profile, Orders, EditProfile, ChangePassword } from './routes'
 import { connect } from 'react-redux'
+import OrderDetail from '../screens/OderDetail/OrderDetail'
 
 const { Navigator, Screen } = createStackNavigator()
 class RootNavigation extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
+        this.state = {
 
         }
     }
     render() {
-        return (this.props.state.isLogin?
-            <Navigator screenOptions={{headerShown: false}}>
+        return (this.props.state.isLogin ?
+            <Navigator screenOptions={{ headerShown: false }}>
                 <Screen name='home' component={Home} />
                 <Screen name='profile' component={Profile} />
                 <Screen name='my-orders' component={Orders} />
                 <Screen name='edit-profile' component={EditProfile} />
                 <Screen name='change-password' component={ChangePassword} />
-            </Navigator>:
-            <Navigator screenOptions={{headerShown: false}}>
-            <Screen name='login' component={Login} />
-            <Screen name='forgot-password' component={ForgotPassword} />
-            <Screen name='reset-password' component={ResetPassword} />
-            <Screen name='verify-otp' component={VerifyOtp} />
-        </Navigator>
+                <Screen name='OrderDetail' component={OrderDetail} />
+            </Navigator> :
+            <Navigator screenOptions={{ headerShown: false }}>
+                <Screen name='login' component={Login} />
+                <Screen name='forgot-password' component={ForgotPassword} />
+                <Screen name='reset-password' component={ResetPassword} />
+                <Screen name='verify-otp' component={VerifyOtp} />
+            </Navigator>
         )
     }
 }
 const mapStateToProps = state => {
     return {
-      state: state.AuthReducer,
+        state: state.AuthReducer,
     };
-  };
-  const mapDispatchToProps = dispatch => {
+};
+const mapDispatchToProps = dispatch => {
     return {
         login: (data) => dispatch({ type: 'SIGNIN', payload: data }),
     };
-  };
-  export default connect(mapStateToProps, mapDispatchToProps)(RootNavigation)
+};
+export default connect(mapStateToProps, mapDispatchToProps)(RootNavigation)
 const styles = StyleSheet.create({})
